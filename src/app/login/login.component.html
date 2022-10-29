@@ -1,0 +1,42 @@
+<div class="signup_container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form #loginuser="ngForm" (ngSubmit)="User(loginuser.value)" class="sign-in-form">
+          <h2 class="title">Welcome</h2>
+          <p class="heading">Log in to your account to continue</p>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="email" placeholder="Username" id="email" name="email" [(ngModel)]="email"/>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+                 [(ngModel)]="account.password" #password="ngModel"
+                 minlength="5" maxlength="20"/>
+            </div>
+          <a href="#" class="link">Forgot your password?</a> 
+          <ng9-password-strength-bar
+          [passwordToCheck]="account.password"
+          [barLabel]="barLabel"
+          [customThresholds]="thresholds"
+          [barColors]="myColors">
+           </ng9-password-strength-bar>
+          <button type="submit"  class="btn">Log In</button>
+          <p class="social-text">Don't have an account ?
+          <a href="#" class="social-sign">Sign up!</a>
+          </p>
+          <div class="social-media">
+            <!-- <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
